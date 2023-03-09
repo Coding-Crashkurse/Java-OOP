@@ -2,14 +2,20 @@ package org.example;
 
 public class Car {
 
-    private String brand;
-    private Double fuel;
-    private Double price;
+    protected String brand; // Private am Anfang, wegen Inheritance auf private setzen.
+    protected Double fuel;
+    protected Double price;
+    protected static int count = 0;
+
+    public static int getCount() {
+        return count;
+    }
 
     Car(String brand, Double fuel, Double price) {
         this.brand = brand;
         this.fuel = fuel;
         this.price = price;
+        count++;
     }
 
     public String getBrand() {
@@ -36,10 +42,6 @@ public class Car {
         this.price = price;
     }
 
-//    public void drive() {
-//        System.out.println("Brumm");
-//    }
-
     public void drive(Integer km) {
         Double fuelConsumptionPer100Km = 7.0;
         Double fuelRequired = fuelConsumptionPer100Km * km / 100.0;
@@ -51,6 +53,4 @@ public class Car {
             System.out.println("Nicht genügend Benzin für " + km + " km");
         }
     }
-
-
 }
