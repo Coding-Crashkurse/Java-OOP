@@ -1,6 +1,6 @@
 package org.example;
 
-public class Car {
+public class Car implements Vehicle {
 
     protected String brand; // Private am Anfang, wegen Inheritance auf private setzen.
     protected Double fuel;
